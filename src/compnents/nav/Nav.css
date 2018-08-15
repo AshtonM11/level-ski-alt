@@ -1,0 +1,21 @@
+nav {
+  background-color: transparent;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-items {
+  position: fixed;
+  top: 0;
+  right: 20px;
+  width: 300px;
+  display: flex;
+}
+
+#nav-items div {
+  margin-left: 12px;
+  margin-right: 12px;
+}
