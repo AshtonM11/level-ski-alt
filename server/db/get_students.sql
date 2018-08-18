@@ -1,1 +1,1 @@
-SELECT * FROM Students WHERE fb_id = $1
+SELECT * FROM students WHERE fb_id = $1;

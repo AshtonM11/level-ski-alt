@@ -4,7 +4,7 @@ import "./Form.css";
 import img from "../../Images/new-color-logo.png";
 import { connect } from "react-redux";
 import Nav from "../Nav/Nav";
-// import Profile from "../Profile/Profile";
+
 import { Link } from "react-router-dom";
 import {
   updateStudentName,
@@ -39,7 +39,7 @@ class Form extends Component {
     return (
       <div>
         <Nav> </Nav>
-        <div className="user">
+        <div className="userForm">
           <header className="user__header">
             <img
               src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg"

@@ -60,12 +60,12 @@ export default class Login extends Component {
                 <h1>Level Ski</h1>
                 <input type="text" placeholder="Username" />
                 <input type="text" placeholder="Password" />
-                <button>Login</button>
+
                 <a href="http://localhost:3005/login">
                   {" "}
                   <p>
                     {" "}
-                    <span>Sign Up </span>{" "}
+                    <button>Login </button>{" "}
                   </p>
                 </a>
               </div>

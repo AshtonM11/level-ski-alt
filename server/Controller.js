@@ -1,15 +1,17 @@
 module.exports = {
-  // get: (req, res, next) => {
-  //   const dbInstance = req.app.get("db");
+  getAll: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+    console.log("this is req.user", req.user);
+    console.log("this is req.session", req.session);
 
-  //   dbInstance
-  //     .get()
-  //     .then(users => res.status(200).send(houses))
-  //     .catch(error => {
-  //       res.status(500).send({ errorMessage: "something went wrong" });
-  //       console.log("error", error);
-  //     });
-  // },
+    dbInstance
+      .get_students([req.session.user.user_id])
+      .then(students => res.status(200).send(students))
+      .catch(error => {
+        res.status(500).send({ errorMessage: "something went wrong" });
+        console.log("error", error);
+      });
+  },
   create: (req, res, next) => {
     const dbInstance = req.app.get("db");
     const {

@@ -21,19 +21,32 @@ class Profile extends Component {
     };
   }
 
-  componentDidMount() {
+  getStudents = () => {
     axios({
-      method: "get",
-      url: "/api/user"
+      method: "GET",
+      url: "/api/students"
     }).then(response => {
-      console.log("this is response", response);
-      this.props.updateStudentName(response.data.nickname);
-      this.props.updateImageUrl(response.data.picture);
-      this.setState({ user: response.data, loading: false });
+      this.setState({ user: response.data[0], loading: false });
     });
-  }
+  };
+
+  componentDidMount = () => {
+    this.getStudents();
+  };
+  // componentDidMount() {
+  //   axios({
+  //     method: "get",
+  //     url: "/api/students"
+  //   }).then(response => {
+  //     console.log("this is response", response);
+  //     this.props.updateStudentName(response.data.nickname);
+  //     this.props.updateImageUrl(response.data.picture);
+  //     this.setState({ user: response.data, loading: false });
+  //   });
+  // }
 
   render() {
+    console.log("this.state.user", this.state.user);
     return (
       <div>
         <Nav />
@@ -52,9 +65,57 @@ class Profile extends Component {
             )}
           </div>
         )}
-        <Link to="/form">
-          <button> Fill out form </button>
-        </Link>
+
+        <div className="bodyProfile">
+          <div className="wrapperProfile">
+            <div className="applicationProfile">
+              <div className="headerProfile">
+                <div className="userProfile">
+                  <div
+                    className="avaProfile"
+                    style={{
+                      backgroundImage: `url('${this.state.user.image_url}')`,
+                      backgroundSize: "cover",
+                      backgroundRepeat: "no-repeat"
+                    }}
+                  />
+                  {/* <img src={this.state.user.image_url} /> */}
+                  <div className="nicknameProfile">Ashton</div>
+                </div>
+              </div>
+              <div className="contentProfile">
+                <div className="tabsProfile">
+                  <div className="tabProfile">
+                    <div className="labelProfile">Age</div>
+                    <div className="countProfile">27</div>
+                  </div>
+                  <div className="tabProfile">
+                    <div className="labelProfile">Skill Level</div>
+                    <div className="countProfile">Beginner</div>
+                  </div>
+                  <div className="tabProfile">
+                    <div className="labelProfile">Learning</div>
+                    <div className="countProfile">All Mountain</div>
+                  </div>
+                  <div className="tabProfile">
+                    <div className="labelProfile">Resorts</div>
+                    <div className="countProfile">Brighton</div>
+                  </div>
+                </div>
+                <div className="friendsProfile">
+                  <button className="friend moreProfile">
+                    Find Instructors
+                  </button>
+                </div>
+              </div>
+              <Link to="/form">
+                <div className="linkButtonProfile">
+                  <button> Update Profile </button>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
