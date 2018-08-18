@@ -1,13 +1,14 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./Form.css";
 import img from "../../Images/new-color-logo.png";
 import { connect } from "react-redux";
 import Nav from "../Nav/Nav";
-import Profile from "../Profile/Profile";
+// import Profile from "../Profile/Profile";
 import { Link } from "react-router-dom";
 import {
   updateStudentName,
-  updateAge,
+  updateStudentAge,
   updateSkillLevel,
   updateDesiredSkill,
   updateResorts
@@ -20,12 +21,20 @@ class Form extends Component {
   }
 
   insertInfo = data => {
-    console.log("hit data", data);
+    console.log("hit data", this.props.userInfo);
     //axios.post('database')
+    axios({
+      method: "POST",
+      url: "/api/students",
+      data: this.props.userInfo
+    }).then(() => {
+      this.props.history.push("/");
+    });
   };
 
   render() {
     const { userInfo } = this.props;
+    console.log("this is this.props", this.props);
 
     return (
       <div>
@@ -52,7 +61,7 @@ class Form extends Component {
 
             <div className="form__group">
               <input
-                onChange={e => this.props.updateAge(e.target.value)}
+                onChange={e => this.props.updateStudentAge(e.target.value)}
                 type="number"
                 placeholder="Age"
                 className="form__input"
@@ -90,6 +99,7 @@ class Form extends Component {
                     e.preventDefault();
                     console.log(userInfo);
                     this.insertInfo(userInfo);
+                    this.props.history.push("/");
                   }}
                   className="button-submit"
                   type="button"
@@ -115,7 +125,7 @@ export default connect(
   mapStateToProps,
   {
     updateStudentName,
-    updateAge,
+    updateStudentAge,
     updateSkillLevel,
     updateDesiredSkill,
     updateResorts

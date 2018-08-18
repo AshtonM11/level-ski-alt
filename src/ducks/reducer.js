@@ -1,13 +1,13 @@
 const initialState = {
   student_name: "",
-  age: "",
+  student_age: "",
   skill_level: "",
   desired_skill: "",
   resorts: "",
   image_url: ""
 };
 const UPDATE_STUDENT_NAME = "UPDATE_STUDENT_NAME";
-const UPDATE_AGE = "UPDATE_AGE";
+const UPDATE_STUDENT_AGE = "UPDATE_STUDENT_AGE";
 const UPDATE_SKILL_LEVEL = "UPDATE_SKILL_LEVEL";
 const UPDATE_DESIRED_SKILL = "UPDATE_DESIRED_SKILL";
 const UPDATE_RESORTS = "UPDATE_RESORTS";
@@ -18,8 +18,8 @@ function reducer(state = initialState, action) {
     case UPDATE_STUDENT_NAME:
       return Object.assign({}, state, { student_name: action.payload });
 
-    case UPDATE_AGE:
-      return Object.assign({}, state, { age: action.payload });
+    case UPDATE_STUDENT_AGE:
+      return Object.assign({}, state, { student_age: action.payload });
 
     case UPDATE_SKILL_LEVEL:
       return Object.assign({}, state, { skill_level: action.payload });
@@ -48,10 +48,10 @@ export function updateStudentName(student_name) {
   };
 }
 
-export function updateAge(age) {
+export function updateStudentAge(student_age) {
   return {
-    type: UPDATE_AGE,
-    payload: age
+    type: UPDATE_STUDENT_AGE,
+    payload: student_age
   };
 }
 

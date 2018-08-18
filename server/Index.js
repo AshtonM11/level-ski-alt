@@ -8,7 +8,7 @@ const strategy = require(`${__dirname}/strategy.js`);
 
 const passport = require("passport");
 
-// const controller = require("./controller");
+const controller = require("./controller");
 const cors = require("cors");
 
 const app = (module.exports = express());
@@ -33,19 +33,32 @@ app.use(passport.initialize());
 app.use(passport.session());
 passport.use(strategy);
 
-passport.serializeUser(function(user, done) {
-  console.log("this is user", user);
-  done(null, {
-    id: user.id,
-    display: user.displayName,
-    nickname: user.nickname,
-    picture: user.picture
+passport.serializeUser(function(fbUser, done) {
+  const db = app.get("db");
+  // console.log("XXXXX req.user", fbUser);
+  db.get_students([fbUser.id]).then(user => {
+    if (user[0]) {
+      return done(null, { ...fbUser, id: user[0].id });
+    } else {
+      db.create_students([fbUser.name, fbUser.id]).then(user => {
+        return done(null, { ...fbUser, id: user[0].id });
+      });
+    }
   });
+  // done(null, {
+  //   id: user.id,
+  //   display: user.displayName,
+  //   nickname: user.nickname,
+  //   picture: user.picture
+  // });
 });
 
 passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
+
+// app.get("/api/students", controller.get);
+app.post("/api/students", controller.create);
 
 //Auth0 login
 app.get(
@@ -53,7 +66,7 @@ app.get(
   passport.authenticate("auth0", {
     successRedirect: "/me",
     failureRedirect: "/login",
-    failureFlash: true
+    failureFlash: false
   })
 );
 
@@ -63,6 +76,9 @@ app.get("/api/user", (req, res) => {
 });
 
 app.get("/me", (req, res, next) => {
+  //write some code that says, if this user already exists. dont write them to the db, otherwise, write them to the db
+  //check to see if the user exists, run some sql, that's like "Select * from users where fbid = x" => if that exists, then dont write a new record
+  //if nothing comes back from that query, then do write a new record
   req.session.user = req.user;
   if (!req.user) {
     res.redirect("/login");

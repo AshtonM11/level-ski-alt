@@ -1,0 +1,1 @@
+SELECT * FROM Students WHERE fb_id = $1

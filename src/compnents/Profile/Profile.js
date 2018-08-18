@@ -6,7 +6,7 @@ import { Loader } from "mx-react-components";
 import Nav from "../Nav/Nav";
 import {
   updateStudentName,
-  updateAge,
+  updateStudentAge,
   updateImageUrl
 } from "../../ducks/reducer";
 import "./Profile.css";
@@ -62,5 +62,5 @@ class Profile extends Component {
 
 export default connect(
   null,
-  { updateAge, updateImageUrl, updateStudentName }
+  { updateStudentAge, updateImageUrl, updateStudentName }
 )(Profile);
