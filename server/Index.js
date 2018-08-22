@@ -34,6 +34,7 @@ app.use(passport.session());
 passport.use(strategy);
 
 passport.serializeUser(function(fbUser, done) {
+  console.log("FBUSER", fbUser);
   const db = app.get("db");
   db.get_students([fbUser.id]).then(user => {
     if (user[0]) {

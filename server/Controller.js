@@ -21,15 +21,11 @@ module.exports = {
       desired_skill,
       resorts
     } = req.body;
-
     console.log("the user id", req.user.id);
-
     console.log("and this is req.session", req.session);
-
     if (req.user == null) {
       return res.status(401);
     }
-
     dbInstance
       .update_students([
         student_name,

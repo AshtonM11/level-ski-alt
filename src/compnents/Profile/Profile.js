@@ -66,56 +66,12 @@ class Profile extends Component {
           </div>
         )}
 
-        <div className="bodyProfile">
-          <div className="wrapperProfile">
-            <div className="applicationProfile">
-              <div className="headerProfile">
-                <div className="userProfile">
-                  <div
-                    className="avaProfile"
-                    style={{
-                      backgroundImage: `url('${this.state.user.image_url}')`,
-                      backgroundSize: "cover",
-                      backgroundRepeat: "no-repeat"
-                    }}
-                  />
-                  {/* <img src={this.state.user.image_url} /> */}
-                  <div className="nicknameProfile">Ashton</div>
-                </div>
-              </div>
-              <div className="contentProfile">
-                <div className="tabsProfile">
-                  <div className="tabProfile">
-                    <div className="labelProfile">Age</div>
-                    <div className="countProfile">27</div>
-                  </div>
-                  <div className="tabProfile">
-                    <div className="labelProfile">Skill Level</div>
-                    <div className="countProfile">Beginner</div>
-                  </div>
-                  <div className="tabProfile">
-                    <div className="labelProfile">Learning</div>
-                    <div className="countProfile">All Mountain</div>
-                  </div>
-                  <div className="tabProfile">
-                    <div className="labelProfile">Resorts</div>
-                    <div className="countProfile">Brighton</div>
-                  </div>
-                </div>
-                <div className="friendsProfile">
-                  <button className="friend moreProfile">
-                    Find Instructors
-                  </button>
-                </div>
-              </div>
-              <Link to="/form">
-                <div className="linkButtonProfile">
-                  <button> Update Profile </button>
-                </div>
-              </Link>
-            </div>
+        <button>Find Instructors</button>
+        <Link to="/form">
+          <div className="linkButtonProfile">
+            <button> Update Profile </button>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }

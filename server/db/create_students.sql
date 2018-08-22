@@ -1,1 +1,1 @@
-INSERT INTO students ( student_name, fb_id, image_url ) VALUES ( $1, $2, $3);
+INSERT INTO students (student_name, fb_id) VALUES ($1, $2);
