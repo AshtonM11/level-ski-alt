@@ -49,7 +49,7 @@ class Profile extends Component {
               <h2> profile page </h2>
             ) : (
               <div>
-                <Link to="/login">Return to login</Link>
+                <Link to="/login" />
               </div>
             )}
           </div>
@@ -99,9 +99,22 @@ class Profile extends Component {
                 className="form__inputProfile"
               />
             </div>
-            <button className="button-submitProfile"> Find Instructors </button>
+            <Link to="/instructors">
+              <div>
+                <button className="button-submitProfile">
+                  {" "}
+                  Find Instructors{" "}
+                </button>
+              </div>
+            </Link>
           </form>
         </div>
+
+        {/* <Link to="/form">
+          <div>
+            <button className="linkButtonProfile"> Update Profile </button>
+          </div>
+        </Link> */}
       </div>
     );
   }

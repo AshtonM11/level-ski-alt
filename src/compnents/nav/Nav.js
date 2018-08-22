@@ -4,14 +4,37 @@ import "./Nav.css";
 class Nav extends Component {
   render() {
     return (
-      <nav>
-        <div id="nav-items">
-          <div>Instructors</div>
-          <div>Rentals</div>
-          <div>About</div>
-          <div>Contact</div>
+      <header>
+        <div className="navWrapper" id="home">
+          <div className=" clearfix">
+            <h3 className="companyName">LEVEL SKI</h3>
+            <nav className="mainNav clearfix">
+              <ul>
+                <li>
+                  <a href="/login" className="smoothScroll">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="/" className="smoothScroll">
+                    Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="/form" className="smoothScroll">
+                    Update Profile
+                  </a>
+                </li>
+                <li>
+                  <a href="#contact" className="smoothScroll">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </nav>
+      </header>
     );
   }
 }
