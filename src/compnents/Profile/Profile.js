@@ -33,17 +33,6 @@ class Profile extends Component {
   componentDidMount = () => {
     this.getStudents();
   };
-  // componentDidMount() {
-  //   axios({
-  //     method: "get",
-  //     url: "/api/students"
-  //   }).then(response => {
-  //     console.log("this is response", response);
-  //     this.props.updateStudentName(response.data.nickname);
-  //     this.props.updateImageUrl(response.data.picture);
-  //     this.setState({ user: response.data, loading: false });
-  //   });
-  // }
 
   render() {
     console.log("this.state.user", this.state.user);
@@ -66,12 +55,53 @@ class Profile extends Component {
           </div>
         )}
 
-        <button>Find Instructors</button>
-        <Link to="/form">
-          <div className="linkButtonProfile">
-            <button> Update Profile </button>
-          </div>
-        </Link>
+        <div className="userFormProfile">
+          <header className="user__headerProfile">
+            <img
+              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg"
+              alt=""
+            />
+            <h1 className="user__titleProfile">Your Stats</h1>
+          </header>
+
+          <form className="formProfile">
+            <div className="form__groupProfile">
+              <input
+                placeholder={this.state.user.student_name}
+                className="form__inputProfile"
+              />
+            </div>
+
+            <div className="form__groupProfile">
+              <input
+                placeholder={this.state.user.student_age}
+                className="form__inputProfile"
+              />
+            </div>
+
+            <div className="form__groupProfile">
+              <input
+                placeholder={this.state.user.skill_level}
+                className="form__inputProfile"
+              />
+            </div>
+
+            <div className="form__groupProfile">
+              <input
+                placeholder={this.state.user.desired_skill}
+                className="form__inputProfile"
+              />
+            </div>
+
+            <div className="form__groupProfile">
+              <input
+                placeholder={this.state.user.resorts}
+                className="form__inputProfile"
+              />
+            </div>
+            <button className="button-submitProfile"> Find Instructors </button>
+          </form>
+        </div>
       </div>
     );
   }
