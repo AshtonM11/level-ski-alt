@@ -39,34 +39,34 @@ export default class Instructors extends Component {
           ) : (
             <div />
           )}
-          <h2> Instructors </h2>
         </div>
-        <div className="cardInstructors">
-          <div className="card-headerInstructors">
-            <img src="http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/507308-iStock-637147044.jpg?itok=CmLtFHJG&resize=1100x1100" />
-          </div>
+        <div>
           {this.state.instructors.map(instructors => (
-            <div className="card-contentInstructors" key={instructors.id}>
-              <h3>{instructors.instructor_name}</h3>
-              <h4>{instructors.instructor_level} </h4>
-              <h4>{instructors.instructor_speciality} </h4>
-              <h4>{instructors.instructor_resorts} </h4>
-              <h4>{instructors.instructor_ageRange} </h4>
-            </div>
+            <figure className="instructors" key={instructors.id}>
+              <img
+                src={instructors.instructor_image}
+                alt="profile-sample1"
+                className="background"
+              />
+              <img
+                src={instructors.instructor_image}
+                alt="profile-sample1"
+                className="profile"
+              />
+              <figcaption>
+                <h3>{instructors.instructor_name}</h3>
+                <span>Expertise: {instructors.instructor_speciality}</span>
+
+                <div className="icons">
+                  <h4>{instructors.instructor_resorts}</h4>
+                  <h4>{instructors.instructor_level} Skiers </h4>
+                  <h5>Ages: {instructors.instructor_ageRange}</h5>
+
+                  <button className="instructorButton"> Schedule </button>
+                </div>
+              </figcaption>
+            </figure>
           ))}
-          <div className="card-footerInstructors">
-            <ul>
-              <li>
-                <a href="/#">
-                  <button className="buttonInstructors">
-                    {" "}
-                    Schedule Lesson{" "}
-                  </button>
-                  {/* <i className="fa fa-codepenInstructors" /> */}
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
       </div>
     );
