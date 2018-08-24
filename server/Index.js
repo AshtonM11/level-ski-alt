@@ -62,8 +62,12 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+// Student endpoints
 app.get("/api/students", controller.getAll);
 app.post("/api/students", controller.create);
+
+// Instructor endpoint
+app.get("/api/instructors", controller.getInst);
 
 //Auth0 login
 app.get(
@@ -88,6 +92,10 @@ app.get("/me", (req, res, next) => {
     // res.status(200).send(JSON.stringify(req.user, null, 10));
   }
 });
+
+// app.get("/*", express.static(
+//   path.join(--dirname, '..','build')
+// ))
 
 const port = process.env.PORT || 3005;
 app.listen(port, () => {

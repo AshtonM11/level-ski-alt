@@ -72,7 +72,7 @@ class Form extends Component {
               <input
                 onChange={e => this.props.updateSkillLevel(e.target.value)}
                 type="text"
-                placeholder="Your skill level"
+                placeholder="Your skill level? Beginner, Intermediate, Advanced or Expert"
                 className="form__input"
               />
             </div>
@@ -81,7 +81,7 @@ class Form extends Component {
               <input
                 onChange={e => this.props.updateDesiredSkill(e.target.value)}
                 type="text"
-                placeholder="What do you want to learn?"
+                placeholder="What do you want to learn? Basics, Park, All Mountain or Cliffs"
                 className="form__input"
               />
             </div>
@@ -90,7 +90,7 @@ class Form extends Component {
               <input
                 onChange={e => this.props.updateResorts(e.target.value)}
                 type="text"
-                placeholder="What resorts do you prefer?"
+                placeholder="What resorts do you prefer, if any?"
                 className="form__input"
               />
               <Link to="/">

@@ -104,17 +104,12 @@ class Profile extends Component {
                 <button className="button-submitProfile">
                   {" "}
                   Find Instructors{" "}
+                  {/* // onClick matches students attributes with an instructor, displays on instructor.js */}
                 </button>
               </div>
             </Link>
           </form>
         </div>
-
-        {/* <Link to="/form">
-          <div>
-            <button className="linkButtonProfile"> Update Profile </button>
-          </div>
-        </Link> */}
       </div>
     );
   }

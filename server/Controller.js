@@ -43,5 +43,18 @@ module.exports = {
         console.log("22222error", error);
         res.status(500).send({ errorMessage: "something went wrong" });
       });
+  },
+  getInst: (req, res, next) => {
+    const dbInstance = req.app.get("db");
+    console.log("this is req.user", req.user);
+    console.log("this is req.session", req.session);
+
+    dbInstance
+      .get_instructors([req.session])
+      .then(instructors => res.status(200).send(instructors))
+      .catch(error => {
+        res.status(500).send({ errorMessage: "something went wrong" });
+        console.log("error", error);
+      });
   }
 };
