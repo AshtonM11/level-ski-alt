@@ -12,6 +12,7 @@ body {
   animation: move 10s ease infinite;
   transform: translate3d(0, 0, 0);
   height: 100vh;
+  background-repeat: no-repeat;
 }
 
 .userForm {

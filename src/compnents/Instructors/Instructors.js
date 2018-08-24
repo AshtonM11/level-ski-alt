@@ -10,7 +10,7 @@ export default class Instructors extends Component {
   constructor() {
     super();
     this.state = {
-      instructors: {}
+      instructors: []
     };
   }
 
@@ -19,7 +19,7 @@ export default class Instructors extends Component {
       method: "GET",
       url: "/api/instructors"
     }).then(response => {
-      this.setState({ instructors: response.data[0], loading: false });
+      this.setState({ instructors: response.data, loading: false });
     });
   };
 
@@ -45,33 +45,15 @@ export default class Instructors extends Component {
           <div className="card-headerInstructors">
             <img src="http://images.mentalfloss.com/sites/default/files/styles/mf_image_16x9/public/507308-iStock-637147044.jpg?itok=CmLtFHJG&resize=1100x1100" />
           </div>
-          <div className="card-contentInstructors">
-            <h3>{this.state.instructors.instructor_name}</h3>
-            <h4>{this.state.instructors.instructor_level} </h4>
-            <h4>{this.state.instructors.instructor_speciality} </h4>
-            <h4>{this.state.instructors.instructor_resorts} </h4>
-            <h4>{this.state.instructors.instructor_ageRange} </h4>
-          </div>
-          <div className="card-footerInstructors">
-            <ul>
-              <li>
-                <a href="/#">
-                  <button className="buttonInstructors">
-                    {" "}
-                    Schedule Lesson{" "}
-                  </button>
-                  {/* <i className="fa fa-codepenInstructors" /> */}
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="card-contentInstructors">
-            <h3>{this.state.instructors.instructor_name}</h3>
-            <h4>{this.state.instructors.instructor_level} </h4>
-            <h4>{this.state.instructors.instructor_speciality} </h4>
-            <h4>{this.state.instructors.instructor_resorts} </h4>
-            <h4>{this.state.instructors.instructor_ageRange} </h4>
-          </div>
+          {this.state.instructors.map(instructors => (
+            <div className="card-contentInstructors" key={instructors.id}>
+              <h3>{instructors.instructor_name}</h3>
+              <h4>{instructors.instructor_level} </h4>
+              <h4>{instructors.instructor_speciality} </h4>
+              <h4>{instructors.instructor_resorts} </h4>
+              <h4>{instructors.instructor_ageRange} </h4>
+            </div>
+          ))}
           <div className="card-footerInstructors">
             <ul>
               <li>
