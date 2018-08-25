@@ -26,8 +26,8 @@ class Nav extends Component {
                   </a>
                 </li>
                 <li>
-                  <a href="#contact" className="smoothScroll">
-                    Contact
+                  <a href="/instructors" className="smoothScroll">
+                    Instructors
                   </a>
                 </li>
               </ul>
