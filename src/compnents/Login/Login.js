@@ -61,7 +61,7 @@ export default class Login extends Component {
                 <input type="text" placeholder="Username" />
                 <input type="text" placeholder="Password" />
                 <button>Login</button>
-                <a href="104.248.229.146/login">
+                <a href="/login">
                   {" "}
                   <p>
                     {" "}
