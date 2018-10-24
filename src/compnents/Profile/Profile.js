@@ -31,7 +31,21 @@ class Profile extends Component {
   };
 
   componentDidMount = () => {
-    this.props.history.push("/login");
+    axios({
+      method: "get",
+      url: "/api/user"
+    })
+      .then(response => {
+        console.log("response in cdm in profile", response);
+        //check something on the response
+        if (!response.data.name) {
+          this.props.history.push("/login");
+        }
+      })
+      .catch(() => {
+        this.props.history.push("/login");
+      });
+
     this.getStudents();
   };
 
