@@ -31,6 +31,7 @@ class Profile extends Component {
   };
 
   componentDidMount = () => {
+    this.props.history.push("/login");
     this.getStudents();
   };
 
