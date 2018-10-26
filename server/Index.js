@@ -8,7 +8,7 @@ const strategy = require(`${__dirname}/strategy.js`);
 
 const passport = require("passport");
 
-const controller = require("./controller");
+const controller = require("./Controller");
 const cors = require("cors");
 
 const app = (module.exports = express());
@@ -61,6 +61,8 @@ passport.serializeUser(function(fbUser, done) {
 passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
+
+app.use(express.static('../build'))
 
 // Student endpoints
 app.get("/api/students", controller.getAll);
