@@ -2,7 +2,7 @@
   "name": "level-ski",
   "version": "0.1.0",
   "private": true,
-  "proxy": "104.248.229.146",
+  "proxy": "http://localhost:3005",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
