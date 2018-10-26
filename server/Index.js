@@ -56,6 +56,8 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
+app.use(express.static(path.join(__dirname, "../build")));
+
 // Student endpoints
 app.get("/api/students", controller.getAll);
 app.post("/api/students", controller.create);
@@ -85,8 +87,6 @@ app.get("/me", (req, res, next) => {
     res.redirect("/");
   }
 });
-
-app.use("/*", express.static(path.join(__dirname, "..", "build")));
 
 const port = process.env.PORT || 3005;
 app.listen(port, () => {
