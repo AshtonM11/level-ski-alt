@@ -86,7 +86,7 @@ app.get("/me", (req, res, next) => {
   }
 });
 
-app.use("/", express.static(path.join(__dirname, "../build")));
+app.use(express.static(path.join(__dirname, "../build")));
 
 const port = process.env.PORT || 3005;
 app.listen(port, () => {
