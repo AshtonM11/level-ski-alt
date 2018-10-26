@@ -56,7 +56,7 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-app.use(express.static(path.join(__dirname, "../build")));
+app.use(express.static("../build"));
 
 // Student endpoints
 app.get("/api/students", controller.getAll);
