@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const massive = require("massive");
 const session = require("express-session");
 const strategy = require(`${__dirname}/strategy.js`);
+const path = require("path");
 
 const passport = require("passport");
 
@@ -62,7 +63,7 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-app.use(express.static('../build'))
+app.use(express.static(path.join(__dirname,'../build')))
 
 // Student endpoints
 app.get("/api/students", controller.getAll);
