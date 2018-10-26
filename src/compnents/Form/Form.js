@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import "./Form.css";
-import img from "../../Images/new-color-logo.png";
+// import img from "../../Images/new-color-logo.png";
 import { connect } from "react-redux";
 import Nav from "../Nav/Nav";
 
