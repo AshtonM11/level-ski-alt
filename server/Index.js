@@ -81,7 +81,7 @@ app.get("/me", (req, res, next) => {
   if (!req.user) {
     res.redirect("/login");
   } else {
-    res.redirect("http://localhost:3000");
+    res.redirect("/");
   }
 });
 

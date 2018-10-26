@@ -39,7 +39,7 @@ class Profile extends Component {
         console.log("response in cdm in profile", response);
         //check something on the response
         if (!response.data.name) {
-          this.props.history.push("/login");
+          this.props.history.replace("/login");
         }
       })
       .catch(() => {
