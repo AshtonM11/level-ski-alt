@@ -49,13 +49,6 @@ passport.serializeUser(function(fbUser, done) {
         });
     }
   });
-
-  // done(null, {
-  //   id: user.id,
-  //   display: user.displayName,
-  //   nickname: user.nickname,
-  //   picture: user.picture
-  // });
 });
 
 passport.deserializeUser(function(obj, done) {
@@ -89,13 +82,8 @@ app.get("/me", (req, res, next) => {
     res.redirect("/login");
   } else {
     res.redirect("http://localhost:3000");
-    // res.status(200).send(JSON.stringify(req.user, null, 10));
   }
 });
-
-// app.get("/*", express.static(
-//   path.join(--dirname, '..','build')
-// ))
 
 const port = process.env.PORT || 3005;
 app.listen(port, () => {

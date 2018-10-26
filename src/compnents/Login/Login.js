@@ -58,14 +58,14 @@ export default class Login extends Component {
 
               <div className="box">
                 <h1>Level Ski</h1>
-                <input type="text" placeholder="Username" />
+                {/* <input type="text" placeholder="Username" />
                 <input type="text" placeholder="Password" />
-                <button>Login</button>
-                <a href="/login">
+                <button>Login</button> */}
+                <a href="http://104.248.229.146/login">
                   {" "}
                   <p>
                     {" "}
-                    <span>Sign Up </span>{" "}
+                    <button>Sign Up </button>{" "}
                   </p>
                 </a>
               </div>
