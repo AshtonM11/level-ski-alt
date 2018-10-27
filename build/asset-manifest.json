@@ -1,14 +1,7 @@
 {
-<<<<<<< HEAD
   "main.css": "static/css/main.03310f90.css",
   "main.css.map": "static/css/main.03310f90.css.map",
-  "main.js": "static/js/main.a1ba49d0.js",
-  "main.js.map": "static/js/main.a1ba49d0.js.map",
-=======
-  "main.css": "static/css/main.5b1e958a.css",
-  "main.css.map": "static/css/main.5b1e958a.css.map",
-  "main.js": "static/js/main.8f2c702e.js",
-  "main.js.map": "static/js/main.8f2c702e.js.map",
->>>>>>> de8c89ad3b555b4e33d68b7e5f6be1966924bf70
+  "main.js": "static/js/main.337fe4c9.js",
+  "main.js.map": "static/js/main.337fe4c9.js.map",
   "static/media/skiing-powder.jpg": "static/media/skiing-powder.2a8f5ab4.jpg"
 }
