@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Nav.css";
 
 class Nav extends Component {
@@ -11,24 +12,16 @@ class Nav extends Component {
             <nav className="mainNav clearfix">
               <ul>
                 <li>
-                  <a href="/login" className="smoothScroll">
-                    Home
-                  </a>
+                  <Link to="/login">Home</Link>
                 </li>
                 <li>
-                  <a href="/" className="smoothScroll">
-                    Profile
-                  </a>
+                  <Link to="/">Profile</Link>
                 </li>
                 <li>
-                  <a href="/form" className="smoothScroll">
-                    Update Profile
-                  </a>
+                  <Link to="/form">Update Profile</Link>
                 </li>
                 <li>
-                  <a href="/instructors" className="smoothScroll">
-                    Instructors
-                  </a>
+                  <Link to="/instructors">Instructors</Link>
                 </li>
               </ul>
             </nav>
