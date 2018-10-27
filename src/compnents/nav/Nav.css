@@ -1,3 +1,12 @@
+/* nav {
+  background-color: transparent;
+  color: white;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
 .clearfix:after {
   visibility: hidden;
   display: flex;
@@ -86,7 +95,7 @@ header nav ul li a {
   margin: 0;
   display: flex;
   text-transform: uppercase;
-  font-family: sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 1rem;
 }
 

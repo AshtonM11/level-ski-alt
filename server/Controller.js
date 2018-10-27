@@ -50,7 +50,7 @@ module.exports = {
     console.log("this is req.session", req.session);
 
     dbInstance
-      .get_instructors([req.session])
+      .get_instructors()
       .then(instructors => res.status(200).send(instructors))
       .catch(error => {
         res.status(500).send({ errorMessage: "something went wrong" });
