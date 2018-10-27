@@ -6,7 +6,7 @@
 
 bodyProfile {
   background-image: url("./skiing-powder.jpg");
-  font-family: font-family;
+  font-family: sans-serif;
   font-size: font-size;
   background-size: cover;
   animation: move 10s ease infinite;
@@ -54,7 +54,7 @@ bodyProfile {
   display: block;
   width: 100%;
   padding: 20px;
-  font-family: font-family;
+  font-family: sans-serif;
   -webkit-appearance: none;
   border: 0;
   outline: 0;
