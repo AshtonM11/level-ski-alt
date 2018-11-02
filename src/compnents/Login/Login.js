@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { Component } from "react";
 import "./Login.css";
-// import Nav from "../Nav/Nav";
+import Nav from "../Nav/Nav";
 import "../../App.css";
 import { Redirect } from "react-router-dom";
 
@@ -58,9 +58,7 @@ export default class Login extends Component {
 
               <div className="box">
                 <h1>Level Ski</h1>
-                {/* <input type="text" placeholder="Username" />
-                <input type="text" placeholder="Password" />
-                <button>Login</button> */}
+
                 <a href="/login">
                   {" "}
                   <p>
