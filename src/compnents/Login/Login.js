@@ -27,47 +27,27 @@ export default class Login extends Component {
   render() {
     return (
       <div>
-        <div>
-          {this.state.user.nickname ? <Redirect to="/" /> : null}
-          <div className="vid-container">
-            <video
-              className="bgvid"
-              autoPlay="autoplay"
-              muted="muted"
-              preload="auto"
-              loop
-            >
-              <source
-                src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?1410742112"
-                type="video/webm"
-              />
-            </video>
-            <div className="inner-container">
-              <video
-                className="bgvid inner"
-                autoPlay="autoplay"
-                muted="muted"
-                preload="auto"
-                loop
-              >
-                <source
-                  src="http://mazwai.com/system/posts/videos/000/000/109/webm/leif_eliasson--glaciartopp.webm?random=1"
-                  type="video/webm"
-                />
-              </video>
+        {this.state.user.nickname ? <Redirect to="/" /> : null}
 
-              <div className="box">
-                <h1>Level Ski</h1>
+        <div className="userForm">
+          <header className="user__header">
+            <img
+              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3219/logo.svg"
+              alt=""
+            />
+            <h1 className="user__title">Welcome to Level Ski</h1>
+          </header>
 
-                <a href="/login">
-                  {" "}
-                  <p>
-                    {" "}
-                    <button>Login / Sign Up </button>{" "}
-                  </p>
-                </a>
-              </div>
-            </div>
+          <div className="box">
+            <h1>Level Ski</h1>
+
+            <a href="/login">
+              {" "}
+              <p>
+                {" "}
+                <button>Login / Sign Up </button>{" "}
+              </p>
+            </a>
           </div>
         </div>
       </div>
