@@ -1,84 +1,131 @@
-body {
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.vid-container {
-  position: relative;
+body {
+  background-image: url("./skiing-powder.jpg");
+  font-family: sans-serif;
+  font-size: font-size;
+  background-size: cover;
+  animation: move 10s ease infinite;
+  transform: translate3d(0, 0, 0);
   height: 100vh;
-  overflow: hidden;
+  background-repeat: no-repeat;
 }
-.bgvid {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100vw;
+
+.userForm {
+  width: 90%;
+  max-width: 340px;
+  margin: 10vh auto;
 }
-.inner-container {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  top: calc(50vh - 200px);
-  left: calc(50vw - 200px);
-  overflow: hidden;
-}
-.bgvid.inner {
-  top: calc(-50vh + 200px);
-  left: calc(-50vw + 200px);
-  filter: url("data:image/svg+xml;utf9,<svg%20version='1.1'%20xmlns='http://www.w3.org/2000/svg'><filter%20id='blur'><feGaussianBlur%20stdDeviation='10'%20/></filter></svg>#blur");
-  -webkit-filter: blur(10px);
-  -ms-filter: blur(10px);
-  -o-filter: blur(10px);
-  filter: blur(10px);
-}
-.box {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  font-family: Helvetica;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.13);
-  padding: 30px 0px;
-}
-.box h1 {
+
+.user__header {
   text-align: center;
-  margin: 30px 0;
-  font-size: 30px;
+  opacity: 0;
+  transform: translate3d(0, 500px, 0);
+  animation: arrive 500ms ease-in-out 0.7s forwards;
+  text-shadow: -1px 0 #1b2b50, 0 1px #1b2b50, 1px 0 #1b2b50, 0 -1px #1b2b50;
 }
-.box input {
+
+.user__title {
+  font-size: font-size;
+  margin-bottom: -10px;
+  font-weight: 500;
+  color: white;
+}
+
+.form {
+  margin-top: 40px;
+  border-radius: 6px;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate3d(0, 500px, 0);
+  animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+.form--no {
+  animation: NO 1s ease-in-out;
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.form__input {
   display: block;
-  width: 300px;
-  margin: 20px auto;
-  padding: 15px;
-  background: rgba(0, 0, 0, 0.2);
-  color: #fff;
+  width: 100%;
+  padding: 20px;
+  font-family: sans-serif;
+  -webkit-appearance: none;
   border: 0;
+  outline: 0;
+  transition: 0.3s;
 }
-.box input:focus,
-.box input:active,
-.box button:focus,
-.box button:active {
-  outline: none;
-}
-.box button {
-  background: #1b2b50;
+
+.button-submit {
+  display: block;
+  width: 100%;
+  padding: 20px;
+  font-family: sans-serif;
+  -webkit-appearance: none;
+  outline: 0;
   border: 0;
   color: white;
-  padding: 10px;
-  font-size: 20px;
-  width: 330px;
-  margin: 20px auto;
-  display: block;
-  cursor: pointer;
+  background: #1b2b50;
+  transition: 0.3s;
 }
-.box button:active {
+
+.button-submit:active {
   background: #27ae60;
 }
-.box p {
-  font-size: 14px;
-  text-align: center;
+
+@keyframes NO {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  20%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
 }
-.box p span {
-  cursor: pointer;
-  color: black;
+
+@keyframes arrive {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 50px, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
 }
