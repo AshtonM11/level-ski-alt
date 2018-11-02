@@ -65,7 +65,7 @@ export default class Login extends Component {
                   {" "}
                   <p>
                     {" "}
-                    <button>Sign Up </button>{" "}
+                    <button>Login / Sign Up </button>{" "}
                   </p>
                 </a>
               </div>
