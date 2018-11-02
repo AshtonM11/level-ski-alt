@@ -38,17 +38,15 @@ export default class Login extends Component {
             <h1 className="user__title">Welcome to Level Ski</h1>
           </header>
 
-          <div className="box">
-            <h1>Level Ski</h1>
-
+          <form className="form">
             <a href="/login">
               {" "}
               <p>
                 {" "}
-                <button>Login / Sign Up </button>{" "}
+                <button className="button-submit">Login / Sign Up</button>{" "}
               </p>
             </a>
-          </div>
+          </form>
         </div>
       </div>
     );
